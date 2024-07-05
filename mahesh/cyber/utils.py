@@ -3,7 +3,11 @@ import json
 import config
 import numpy as np
 
+<<<<<<< HEAD
 class anomoly_detection():
+=======
+class Anomoly_detection():
+>>>>>>> 2a8a6730d8f0029f402273eaba16df94b57dbdc9
     def __init__(self,protocol_type,service,flag,src_bytes,dst_bytes,
                  logged_in,count,srv_count,serror_rate,srv_serror_rate,
                  rerror_rate,srv_rerror_rate,same_srv_rate,diff_srv_rate,
@@ -95,11 +99,19 @@ if __name__=='__main__':
  dst_host_serror_rate=0.20
  dst_host_srv_serror_rate=0
  dst_host_srv_rerror_rate=0.10
+<<<<<<< HEAD
  cyber_goal= anomoly_detection(protocol_type,service,flag,src_bytes,dst_bytes,
+=======
+ attack = Anomoly_detection(protocol_type,service,flag,src_bytes,dst_bytes,
+>>>>>>> 2a8a6730d8f0029f402273eaba16df94b57dbdc9
                  logged_in,count,srv_count,serror_rate,srv_serror_rate,
                  rerror_rate,srv_rerror_rate,same_srv_rate,diff_srv_rate,
                  dst_host_count,dst_host_srv_count,dst_host_same_srv_rate,
                  dst_host_diff_srv_rate,dst_host_srv_diff_host_rate,
                  dst_host_serror_rate,dst_host_srv_serror_rate,
                  dst_host_srv_rerror_rate)
+<<<<<<< HEAD
 cyber_goal.get_anamoly_prediction()
+=======
+attack.get_anamoly_prediction()
+>>>>>>> 2a8a6730d8f0029f402273eaba16df94b57dbdc9
