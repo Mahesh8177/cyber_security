@@ -1,0 +1,1 @@
+print('The Anomoly Detection Result'.center(80, "*"))

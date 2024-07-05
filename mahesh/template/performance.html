@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Security Model</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+        input[type="text"], input[type="number"], select {
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #4cae4c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Cyber Security Model</h1>
+        <form action="/anaomiles_Detection" method="POST">
+            <label for="protocol_type">Protocol Type:</label>
+            <input type="text" id="protocol_type" name="protocol_type" required>
+            
+            <label for="service">Service:</label>
+            <input type="text" id="service" name="service" required>
+            
+            <label for="flag">Flag:</label>
+            <input type="text" id="flag" name="flag" required>
+            
+            <label for="src_bytes">Source Bytes:</label>
+            <input type="number" id="src_bytes" name="src_bytes" required>
+            
+            <label for="dst_bytes">Destination Bytes:</label>
+            <input type="number" id="dst_bytes" name="dst_bytes" required>
+            
+            <label for="logged_in">Logged In:</label>
+            <input type="number" id="logged_in" name="logged_in" required>
+            
+            <label for="count">Count:</label>
+            <input type="number" id="count" name="count" required>
+            
+            <label for="srv_count">Service Count:</label>
+            <input type="number" id="srv_count" name="srv_count" required>
+            
+            <label for="serror_rate">SError Rate:</label>
+            <input type="number" step="0.01" id="serror_rate" name="serror_rate" required>
+            
+            <label for="srv_serror_rate">Service SError Rate:</label>
+            <input type="number" step="0.01" id="srv_serror_rate" name="srv_serror_rate" required>
+            
+            <label for="rerror_rate">RError Rate:</label>
+            <input type="number" step="0.01" id="rerror_rate" name="rerror_rate" required>
+            
+            <label for="srv_rerror_rate">Service RError Rate:</label>
+            <input type="number" step="0.01" id="srv_rerror_rate" name="srv_rerror_rate" required>
+            
+            <label for="same_srv_rate">Same Service Rate:</label>
+            <input type="number" step="0.01" id="same_srv_rate" name="same_srv_rate" required>
+            
+            <label for="diff_srv_rate">Different Service Rate:</label>
+            <input type="number" step="0.01" id="diff_srv_rate" name="diff_srv_rate" required>
+            
+            <label for="dst_host_count">Destination Host Count:</label>
+            <input type="number" id="dst_host_count" name="dst_host_count" required>
+            
+            <label for="dst_host_srv_count">Destination Host Service Count:</label>
+            <input type="number" id="dst_host_srv_count" name="dst_host_srv_count" required>
+            
+            <label for="dst_host_same_srv_rate">Destination Host Same Service Rate:</label>
+            <input type="number" step="0.01" id="dst_host_same_srv_rate" name="dst_host_same_srv_rate" required>
+            
+            <label for="dst_host_diff_srv_rate">Destination Host Different Service Rate:</label>
+            <input type="number" step="0.01" id="dst_host_diff_srv_rate" name="dst_host_diff_srv_rate" required>
+            
+            <label for="dst_host_srv_diff_host_rate">Destination Host Service Different Host Rate:</label>
+            <input type="number" step="0.01" id="dst_host_srv_diff_host_rate" name="dst_host_srv_diff_host_rate" required>
+            
+            <label for="dst_host_serror_rate">Destination Host SError Rate:</label>
+            <input type="number" step="0.01" id="dst_host_serror_rate" name="dst_host_serror_rate" required>
+            
+            <label for="dst_host_srv_serror_rate">Destination Host Service SError Rate:</label>
+            <input type="number" step="0.01" id="dst_host_srv_serror_rate" name="dst_host_srv_serror_rate" required>
+            
+            <label for="dst_host_srv_rerror_rate">Destination Host Service RError Rate:</label>
+            <input type="number" step="0.01" id="dst_host_srv_rerror_rate" name="dst_host_srv_rerror_rate" required>
+            
+            <input type="submit" value="Get Prediction">
+        </form>
+    </div>
+</body>
+</html>
