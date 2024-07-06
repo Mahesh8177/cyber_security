@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Anomaly Detection</title>
+</head>
+<body>
+    <h1>Anomaly Detection Form</h1>
+    <form method="POST" action="/anomalies_Detection">
+        <label>Protocol Type:</label><br>
+        <select name="protocol_type" required>
+            <option value="icmp">ICMP</option>
+            <option value="tcp">TCP</option>
+            <option value="udp">UDP</option>
+        </select><br><br>
+        
+        <label>Service:</label><br>
+        <select name="service" required>
+            <option value="IRC">IRC</option>
+            <option value="X11">X11</option>
+            <option value="Z39_50">Z39_50</option>
+            <option value="auth">Auth</option>
+            <option value="bgp">BGP</option>
+            <!-- Add other services here -->
+            <option value="whois">Whois</option>
+        </select><br><br>
+        
+        <label>Flag:</label><br>
+        <select name="flag" required>
+            <option value="OTH">OTH</option>
+            <option value="REJ">REJ</option>
+            <option value="RSTO">RSTO</option>
+            <option value="RSTOS0">RSTOS0</option>
+            <option value="RSTR">RSTR</option>
+            <option value="S0">S0</option>
+            <option value="S1">S1</option>
+            <option value="S2">S2</option>
+            <option value="S3">S3</option>
+            <option value="SF">SF</option>
+            <option value="SH">SH</option>
+        </select><br><br>
+        
+        <label>Src Bytes:</label><br>
+        <input type="number" name="src_bytes" required><br><br>
+        <label>Dst Bytes:</label><br>
+        <input type="number" name="dst_bytes" required><br><br>
+        <label>Logged In:</label><br>
+        <input type="number" name="logged_in" required><br><br>
+        <label>Count:</label><br>
+        <input type="number" name="count" required><br><br>
+        <label>Srv Count:</label><br>
+        <input type="number" name="srv_count" required><br><br>
+        <label>Serror Rate:</label><br>
+        <input type="number" step="0.01" name="serror_rate" required><br><br>
+        <label>Srv Serror Rate:</label><br>
+        <input type="number" step="0.01" name="srv_serror_rate" required><br><br>
+        <label>Rerror Rate:</label><br>
+        <input type="number" step="0.01" name="rerror_rate" required><br><br>
+        <label>Srv Rerror Rate:</label><br>
+        <input type="number" step="0.01" name="srv_rerror_rate" required><br><br>
+        <label>Same Srv Rate:</label><br>
+        <input type="number" step="0.01" name="same_srv_rate" required><br><br>
+        <label>Diff Srv Rate:</label><br>
+        <input type="number" step="0.01" name="diff_srv_rate" required><br><br>
+        <label>Dst Host Count:</label><br>
+        <input type="number" name="dst_host_count" required><br><br>
+        <label>Dst Host Srv Count:</label><br>
+        <input type="number" name="dst_host_srv_count" required><br><br>
+        <label>Dst Host Same Srv Rate:</label><br>
+        <input type="number" step="0.01" name="dst_host_same_srv_rate" required><br><br>
+        <label>Dst Host Diff Srv Rate:</label><br>
+        <input type="number" step="0.01" name="dst_host_diff_srv_rate" required><br><br>
+        <label>Dst Host Srv Diff Host Rate:</label><br>
+        <input type="number" step="0.01" name="dst_host_srv_diff_host_rate" required><br><br>
+        <label>Dst Host Serror Rate:</label><br>
+        <input type="number" step="0.01" name="dst_host_serror_rate" required><br><br>
+        <label>Dst Host Srv Serror Rate:</label><br>
+        <input type="number" step="0.01" name="dst_host_srv_serror_rate" required><br><br>
+        <label>Dst Host Srv Rerror Rate:</label><br>
+        <input type="number" step="0.01" name="dst_host_srv_rerror_rate" required><br><br>
+        
+        <input type="submit" value="Submit">
+    </form>
+    {% if prediction is not none %}
+        <h2>Prediction: {{ prediction }}</h2>
+    {% endif %}
+</body>
+</html>
