@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, jsonify
-from cyber.utils import Anomaly_detection
+from cyber.utils import Anomoly_detection
 import config
 
 app = Flask(__name__)
@@ -45,7 +45,7 @@ def get_anomaly_prediction():
         dst_host_srv_serror_rate = float(data['dst_host_srv_serror_rate'])
         dst_host_srv_rerror_rate = float(data['dst_host_srv_rerror_rate'])
 
-        prediction = Anomaly_detection(protocol_type, service, flag, src_bytes, dst_bytes,
+        prediction = Anomoly_detection(protocol_type, service, flag, src_bytes, dst_bytes,
                                        logged_in, count, srv_count, serror_rate, srv_serror_rate,
                                        rerror_rate, srv_rerror_rate, same_srv_rate, diff_srv_rate,
                                        dst_host_count, dst_host_srv_count, dst_host_same_srv_rate,
@@ -53,9 +53,9 @@ def get_anomaly_prediction():
                                        dst_host_serror_rate, dst_host_srv_serror_rate,
                                        dst_host_srv_rerror_rate)
         
-        cyber_prediction = prediction.get_anomaly_prediction()
+        cyber_prediction = prediction.get_anamoly_prediction()
 
-        return jsonify({'the cyber security prediction is': cyber_prediction})
+        return jsonify({'the cyber security prediction is': int(cyber_prediction)})
     
     else:
         print('We are in the GET method')
@@ -83,15 +83,15 @@ def get_anomaly_prediction():
         dst_host_srv_serror_rate = float(data1.get('dst_host_srv_serror_rate'))
         dst_host_srv_rerror_rate = float(data1.get('dst_host_srv_rerror_rate'))
 
-        prediction1 = Anomaly_detection(protocol_type, service, flag, src_bytes, dst_bytes,
+        prediction1 = Anomoly_detection(protocol_type, service, flag, src_bytes, dst_bytes,
                                         logged_in, count, srv_count, serror_rate, srv_serror_rate,
                                         rerror_rate, srv_rerror_rate, same_srv_rate, diff_srv_rate,
                                         dst_host_count, dst_host_srv_count, dst_host_same_srv_rate,
                                         dst_host_diff_srv_rate, dst_host_srv_diff_host_rate,
                                         dst_host_serror_rate, dst_host_srv_serror_rate,
                                         dst_host_srv_rerror_rate)
-        cyber_prediction1 = prediction1.get_anomaly_prediction()
-        return jsonify({'the cyber security prediction is': cyber_prediction1})
+        cyber_prediction1 = prediction1.get_anamoly_prediction()
+        return jsonify({'the cyber security prediction is': int(cyber_prediction1)})
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=config.PORT_NUMBER, debug=False)
+    app.run(host='0.0.0.0', port=config.PORT_NUMBER, debug=True)
